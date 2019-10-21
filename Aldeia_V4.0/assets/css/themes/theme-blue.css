@@ -58,6 +58,10 @@ html {
   }
 }
 
+#map{
+  height: 100%;
+}
+
 body {
   position: relative;
   color: #343840;
@@ -3186,6 +3190,17 @@ section.protrude, .section.protrude {
   -ms-border-radius: 0.2em;
   -o-border-radius: 0.2em;
   border-radius: 0.2em;
+}
+
+.btn-init {
+  padding: 1.5rem 3rem 1.5rem;
+  font-size: 3rem;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: 0.2em;
+
 }
 
 @media only screen and (max-width: 575px) {
