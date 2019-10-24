@@ -731,16 +731,6 @@ img {
   border-radius: 50%;
 }
 
-
-
-.headerDivider {
-  border-left:1px solid #38546d; 
-  border-right:1px solid #16222c; 
-  height:10px;
-  position:absolute;
-
-}
-
 #header.header-horizontal .module-object .object-name {
   margin-left: 1rem;
 }
