@@ -3222,16 +3222,20 @@ section.protrude, .section.protrude {
 
 /* Types */
 .btn-primary {
-  border-color: #3D64CC;
-  background-color: #3D64CC;
-  color: #fff;
-  color: #fff;
+  border-color:#f15e23;
+  background-color:#fff;
+  color: #000;
+  border-bottom-width: 2px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-right-width: 2px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:focus:active {
-  border-color: #375ab8;
-  background-color: #375ab8;
-  color: #fff;
+  border-color:#f15e23;
+  background-color:#fff;
+  color: #000;
+  border-bottom-width: 3px;
 }
 
 .btn-secondary {
