@@ -10,11 +10,7 @@
 <title>Aldeia Imobiliária</title>
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="assets/img/favicon.png">
-<link rel="apple-touch-icon" href="assets/img/favicon_60x60.png">
-<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon_76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon_120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon_152x152.png">
+
 
 <!-- CSS Plugins -->
 <link rel="stylesheet" href="assets/plugins/bootstrap/dist/css/bootstrap.min.css" />
@@ -50,6 +46,8 @@
                 <li><a href="#who-we-are">Quem somos</a></li>
                 <li><a href="#contact">Contato</a></li>
                 <li><a href="#flats">Comprar</a></li>
+                <li><a href="#flats">Vender</a></li>
+                <li><a href="#flats">Alugar</a></li>
             </ul>
             <div class="selector"></div>
         </nav>
@@ -102,15 +100,6 @@
                         <a class="btn btn-link btn-init" href="">Quero locar meu imóvel</a>
                     </div>
                 </div>
-                <!-- Slide -->
-                <!--<div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="assets/img/photos/slider05.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                        <h1>Feel the nature</h1>
-                    </div>
-                </div> -->
             </div>
 
             <!-- Slider Navigation -->
@@ -151,12 +140,13 @@
                                     <label class="ml-2">m<sup>2</sup></label>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-4 form-group">
-                                <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i>Andar: <!-- Localização --></h5>
-                                <div class="form-inline">
-                                    <input type="text" class="form-control form-control-short" placeholder="de">
-                                    <label class="ml-2 mr-2">-</label>
-                                    <input type="text" class="form-control form-control-short" placeholder="a">
+                            <div class="col-lg-4 col-md-4 form-group">
+                                <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i>Localização: </h5>
+                                <div class="">
+                                    <select class="custom-select ml-2 mr-2 form-control">
+                                        <option></option>
+                                        <option value="lago-norte">Lago Norte</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 form-group">
@@ -165,6 +155,35 @@
                                     <input type="text" class="form-control form-control-short" placeholder="de">
                                     <label class="ml-2 mr-2">-</label>
                                     <input type="text" class="form-control form-control-short" placeholder="a">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-lg-3 col-md-4 form-group">
+                               <label for="valor_imovel"><h5 class="mb-3"><i class="fa fa-dollar text-muted mr-2"></i>Valor</h5></label> 
+                                <div class="form-inline">
+                                    <!-- <input type="range" class="custom-range" id="valor_imovel" min="50000" max="30000000" step="100000"> -->
+                                    <input type="text" class="form-control form-control-short" placeholder="de">
+                                    <label class="ml-2 mr-2">-</label>
+                                    <input type="text" class="form-control form-control-short" placeholder="a">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 form-group">
+                                <label for="valor_imovel"><h5 class="mb-3"><i class="fa fa-sun-o text-muted mr-2"></i>Posição do Sol:</h5></label> 
+                                <div class="">
+                                    <select class="custom-select ml-2 mr-2 form-control">
+                                        <option></option>
+                                        <option value="lago-norte">Lago Norte</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 form-group">
+                                <label for="modalidade"><h5 class="mb-3"><i class="fa fa-home text-muted mr-2"></i>Você quer?</h5></label> 
+                                <div class="">
+                                    <select class="custom-select ml-2 mr-2 form-control">
+                                        <option></option>
+                                        <option value="comprar">Comprar</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-3 form-group">
@@ -201,7 +220,7 @@
                                             <li><span class="text-muted">Floor:</span> 1</li>
                                         </ul>
                                         <span class="object-price">$422 200</span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                        <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                                     </div> 
                                 </div>
                             </div>
@@ -222,7 +241,7 @@
                                             <li><span class="text-muted">Floor:</span> 1</li>
                                         </ul>
                                         <span class="object-price">$422 200</span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                        <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                                     </div> 
                                 </div>
                             </div>
@@ -240,7 +259,7 @@
                                             <li><span class="text-muted">Floor:</span> 1</li>
                                         </ul>
                                         <span class="object-price">$422 200</span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                        <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                                     </div> 
                                 </div>
                             </div>
@@ -258,7 +277,7 @@
                                             <li><span class="text-muted">Floor:</span> 1</li>
                                         </ul>
                                         <span class="object-price">$422 200</span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                        <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                                     </div> 
                                 </div>
                             </div>
@@ -281,7 +300,7 @@
                                     </ul>
                                     <span class="object-price">$422 200</span>
                                 </div> 
-                                <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                             </div>
                             <!-- Object - Horizontal -->
                             <div class="object object-horizontal">
@@ -300,7 +319,7 @@
                                     </ul>
                                     <span class="object-price">$422 200</span>
                                 </div> 
-                                <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                             </div>
                             <!-- Object - Horizontal -->
                             <div class="object object-horizontal">
@@ -316,7 +335,7 @@
                                     </ul>
                                     <span class="object-price">$422 200</span>
                                 </div> 
-                                <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                             </div>
                             <!-- Object - Horizontal -->
                             <div class="object object-horizontal">
@@ -332,7 +351,7 @@
                                     </ul>
                                     <span class="object-price">$422 200</span>
                                 </div> 
-                                <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down">View</span> Details</a>
+                                <a href="object.html" class="btn btn-primary"><span class="hidden-xs-down">View</span> Details</a>
                             </div>
                         </div>
                     </div>
@@ -417,7 +436,7 @@
         <!-- Section / Contact -->
         <section id="contact" class="section section-double bg-light">
 
-            <div class="row">
+            <footer class="row">
                 <div class="content col-xl-4 col-md-5">
                     <h2 class="mb-0">Faça uma visita ou<br> entre em contato!</h2>
                     <hr class="hr-primary">
@@ -440,7 +459,7 @@
                    <div id="google-map" class="bg-map" data-type="wy" data-latitude="-15.776242" data-longitude="-47.887554"></div>
                    
                 </div>
-            </div>
+            </footer>
 
         </section>
 

@@ -655,7 +655,7 @@ img {
   position: absolute;
   bottom: 0;
   height: 3px;
-  background-color: #3D64CC;
+  background-color: #f15e23;
   -webkit-transition: all 0.25s ease-out;
   -moz-transition: all 0.25s ease-out;
   -o-transition: all 0.25s ease-out;
@@ -1417,7 +1417,7 @@ img {
   font-size: 1.6em;
   display: block;
   font-weight: 400;
-  color: #3D64CC;
+  color: #f15e23;
 }
 
 .object:hover .object-image img {
@@ -1985,7 +1985,7 @@ img {
 }
 
 .nav-view > li > a.active {
-  color: #3D64CC;
+  color: #f15e23;
 }
 
 /* Documentation */
@@ -3235,7 +3235,7 @@ section.protrude, .section.protrude {
   border-color:#f15e23;
   background-color:#fff;
   color: #000;
-  border-bottom-width: 3px;
+  border-bottom-width: 0.2rem;
 }
 
 .btn-secondary {
@@ -3246,9 +3246,9 @@ section.protrude, .section.protrude {
 }
 
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary:focus:active {
-  border-color: #375ab8;
-  background-color: #375ab8;
-  color: #fff;
+  border-color: #343840;
+  background-color: #343840;
+  color:  #f5f7f7;
 }
 
 .btn-info {
