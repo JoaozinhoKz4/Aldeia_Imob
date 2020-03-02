@@ -15,7 +15,7 @@ $extensao = strtolower ( $extensao );
 if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
     $novoNome = $nome.'-'.uniqid ( time () ) . '.' . $extensao;
     $destino = "area-do-usuario/administracao/arquivos/".$novoNome;
-    move_uploaded_file( $arquivo_tmp, $_SERVER['DOCUMENT_ROOT']."/Aldeia_V4.0"."/".$destino);}
+    move_uploaded_file( $arquivo_tmp, $_SERVER['DOCUMENT_ROOT']."/Aldeia_imob/Aldeia_V4.0"."/".$destino);}
 
 $sql = "INSERT INTO `docs`(`id_doc`, `titulo`, `nome`, `descricao`, `envio`, `code`) VALUES (NULL,'$nome','$destino','$descricao','$envio',$code)";
 //echo $sql;
