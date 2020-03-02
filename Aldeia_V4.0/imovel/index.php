@@ -34,25 +34,26 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 
 <!-- Meta -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- Title -->
-<title>Aldeia Imobiliãria</title>
+<title>Aldeia Imobiliária</title>
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="../assets/img/favicon.png">
+<!-- <link rel="shortcut icon" href="../assets/img/favicon.png">
 <link rel="apple-touch-icon" href="../assets/img/favicon_60x60.png">
 <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon_76x76.png">
 <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicon_120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicon_152x152.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicon_152x152.png"> -->
 
 <!-- CSS Plugins -->
-<link rel="stylesheet" href="../assets/plugins/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/plugins/bootstrap/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="../assets/plugins/slick-carousel/slick/slick.css" />
 <link rel="stylesheet" href="../assets/plugins/animate.css/animate.min.css" />
 <link rel="stylesheet" href="../assets/plugins/animsition/dist/css/animsition.min.css" />
@@ -64,7 +65,7 @@
 <link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
 
 <!-- CSS Theme -->
-<link id="theme" rel="stylesheet" href="../assets/css/themes/theme-blue.min.css" />
+<link id="theme" rel="stylesheet" href="../assets/css/themes/theme-blue.css" />
 
 </head>
 
@@ -247,20 +248,66 @@
 
         </section>
 
-        <!-- Section - Video -->
-        <section id="features" class="section section-xl dark bg-dark">
-
-            <!-- BG Image -->
-            <div class="bg-image-holder"><img src="../assets/img/photos/video-bg.jpg" alt=""></div>
+        <!-- Section - Galeria -->
+        <section id="home" class="section h-fullheight bg-dark cover dark">
             
-            <!-- Content -->
-            <div class="container text-center">
-                <button class="btn-play animated" data-animation="fadeInUp" data-toggle="video-modal" data-target="#modalVideo" data-video="https://www.youtube.com/embed/uVju5--RqtY"></button>
-                <h2 class="mt-4 mb-0">Neat &amp; Modern Interiors</h2>
+            <!-- Slider Main -->
+            <div class="slider-main slider-kenburns inner-controls">
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="assets/img/photos/slider01.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                       
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="assets/img/photos/slider02.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                        
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="assets/img/photos/slider03.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                     
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="assets/img/photos/slider04.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                        
+                    </div>
+                </div>
             </div>
 
-        </section>
+            <!-- Slider Navigation -->
+            <div class="slider-main-nav">
+                <div class="slide"><img src="" alt=""></div>
+                <div class="slide"><img src="" alt=""></div>
+                <div class="slide"><img src="" alt=""></div>
+                <div class="slide"><img src="" alt=""></div>
+            </div>
 
+            <!-- Gallery Toggle -->
+            <a href="#" class="fullscreen-toggle" data-items="gallerySliderItems" data-toggle="gallery">
+                <span class="arrow-tl"></span>
+                <span class="arrow-tr"></span>
+                <span class="arrow-br"></span>
+                <span class="arrow-bl"></span>
+            </a>
+
+        </section>
         <!-- Section -->
         <section class="section">
 
@@ -269,22 +316,6 @@
                     <div class="col-lg-4 push-lg-2 pr-5">
                         <h2>Descrição</h2>
                         <p class="lead" style="text-align: justify;"><?php echo $anuncio; ?></p>
-                        <!-- Feature #1 -->
-                        <!--div class="feature feature-1">
-                            <i class="icon icon-primary ti ti-cup"></i>
-                            <div class="feature-content">
-                                <h5 class="mb-0">Neat Architecture</h5>
-                                <p class="text-muted">Sed ut faucibus est, eu egestas mi.</p>
-                            </div>
-                        </div-->
-                        <!-- Feature #1 -->
-                        <!--div class="feature feature-1">
-                            <i class="icon icon-primary ti ti-shine"></i>
-                            <div class="feature-content">
-                                <h5 class="mb-0">Close to Nature</h5>
-                                <p class="text-muted">Sed ut faucibus est, eu egestas mi.</p>
-                            </div>
-                        </div-->
                         <a href="#make-offer" class="btn btn-secondary mb-4">Faça uma oferta</a>
                     </div>
                     <div class="col-lg-4 push-lg-2">
@@ -445,6 +476,7 @@
 <script src="../assets/plugins/animsition/dist/js/animsition.min.js"></script>
 <script src="../assets/plugins/tether/dist/js/tether.min.js"></script>
 <script src="../assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
 <script src="../assets/plugins/slick-carousel/slick/slick.min.js"></script>
 <script src="../assets/plugins/jquery.appear/jquery.appear.js"></script>
 <script src="../assets/plugins/jquery.scrollto/jquery.scrollTo.min.js"></script>
