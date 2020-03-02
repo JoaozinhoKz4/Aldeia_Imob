@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS `aldeia_db_beta`.`docs` (
   `titulo` VARCHAR(45) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `descricao` MEDIUMTEXT NOT NULL,
-  `envio` DATE NOT NULL,
-  `code` VARCHAR(45) NOT NULL,
+  `envio` DATETIME NOT NULL,
+  `code` INT(45) NOT NULL,
   PRIMARY KEY (`id_doc`))
 ENGINE = InnoDB;
 
