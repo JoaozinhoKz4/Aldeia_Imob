@@ -1405,6 +1405,7 @@ img {
   -moz-transition: all 0.8s ease-out;
   -o-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
+  max-height: 200px;
 }
 
 .object .object-details {
