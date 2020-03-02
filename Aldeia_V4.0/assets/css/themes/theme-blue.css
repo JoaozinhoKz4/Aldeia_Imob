@@ -1405,6 +1405,7 @@ img {
   -moz-transition: all 0.8s ease-out;
   -o-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
+  max-height: 200px;
 }
 
 .object .object-details {
@@ -5956,7 +5957,7 @@ dl dd {
 
 /* Colors */
 .text-primary {
-  color: #3D64CC !important;
+  color: #f15e23 !important;
 }
 
 .text-secondary {
