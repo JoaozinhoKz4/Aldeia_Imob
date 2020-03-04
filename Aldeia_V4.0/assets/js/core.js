@@ -465,7 +465,7 @@ var Core = {
                 var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
                 var myLatLng = new google.maps.LatLng(yourLatitude,yourLongitude);
                 var image = {
-                    url: 'assets/img/location-pin.png',
+                    url: 'assets/img/pino-de-localizacao.png',
                     
                 };
                 var myLocation = new google.maps.Marker({

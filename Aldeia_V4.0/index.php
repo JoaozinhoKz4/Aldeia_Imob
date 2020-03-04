@@ -661,8 +661,8 @@
         <!-- Section / Contact -->
         <section id="contact" class="section section-double bg-light">
 
-            <footer class="row">
-                <div class="content col-xl-4 col-md-5">
+            <footer class="page-footer fila">
+                <div class="content col-md-4 p-4">
                     <h2 class="mb-0">Faça uma visita ou<br> entre em contato!</h2>
                     <hr class="hr-primary">
                     <address>
@@ -680,9 +680,8 @@
                     <a href="#" class="icon icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
                     <a href="#" class="icon icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
                 </div>
-                <div class="image col-xl-8 col-md-7">
-                   <div id="google-map" class="bg-map" data-type="wy" data-latitude="-15.776242" data-longitude="-47.887554"></div>
-                   
+                <div class="col-md-8 p-4">
+                   <div id="google-map" class="google-maps" data-type="wy" data-latitude="-15.776242" data-longitude="-47.887554"></div>
                 </div>
             </footer>
 
@@ -791,7 +790,7 @@
 </script>
 
 <!-- JS Google Map -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvzW2Nz4KveSszsYlJ3-uUpghaOyvGyA0&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvzW2Nz4KveSszsYlJ3-uUpghaOyvGyA0&callback=initMap" async defer></script>
 
 </body>
 
