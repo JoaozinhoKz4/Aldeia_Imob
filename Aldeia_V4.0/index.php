@@ -146,7 +146,7 @@
                                 <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i>Localização: </h5>
                                 <div class="">
                                     <select class="custom-select ml-2 mr-2 form-control" name="localizacao">
-                                        <option></option>
+                                        <option value="">Selecione o Bairro desejado</option>
                                         <option value="lago-norte">Lago Norte</option>
                                     </select>
                                 </div>
@@ -172,11 +172,21 @@
                             </div>
                             <input type="hidden" value="1" name="pesquisa">
                             <div class="col-lg-3 col-md-4 form-group">
-                                <label for="valor_imovel"><h5 class="mb-3"><i class="fa fa-sun-o text-muted mr-2"></i>Posição do Sol:</h5></label> 
+                                <label for="valor_imovel"><h5 class="mb-3"><i class="fa fa-search text-muted mr-2"></i>Tipo de Imóvel:</h5></label> 
                                 <div class="">
-                                    <select class="custom-select ml-2 mr-2 form-control" name="posicao-sol">
-                                        <option></option>
-                                        <option value="lago-norte">Lago Norte</option>
+                                    <select class="custom-select ml-2 mr-2 form-control" name="tipo-imovel">
+                                        <option>Selecione o Tipo de Imóvel</option>
+                                        <option value="CASA">Casa</option>
+                                        <option value="APARTAMENTO">Apartamento</option>
+                                        <option value="sala">Sala</option>
+                                        <option value="garagem">Garagem</option>
+                                        <option value="chale">Chalé</option>
+                                        <option value="loja">Loja</option>
+                                        <option value="fazenda">Fazenda</option>
+                                        <option value="predio">Prédio</option>
+                                        <option value="terreno">Terreno</option>
+                                        <option value="galpao">Galpão</option>
+                                        <option value="chacara">Chácara</option>
                                     </select>
                                 </div>
                             </div>
@@ -235,8 +245,8 @@
     if ( isset($_GET['valor-maior']) ){
         $valor_maior = $_GET['valor-maior'];
     }
-    if ( isset($_GET['posicao-sol']) ){
-        $posicao_sol = $_GET['posicao-sol'];
+    if ( isset($_GET['tipo-imovel']) ){
+        $tipo_imovel = $_GET['tipo-imovel'];
     }
     if ( isset($_GET['categoria']) ){
         $categoria = $_GET['categoria'];
@@ -330,6 +340,12 @@
             }
             if ($_GET['valor-menor'] != "") {
                 if ($valor < $valor_menor) continue;
+            }
+            if ($_GET['tipo-imovel'] != "") {
+                if ($tipo != $tipo_imovel) continue;
+            }
+            if ($_GET['localizacao'] != "") {
+                if (utf8_decode($item -> Bairro) != $localizacao) continue;
             } 
             if ($_GET['categoria'] != "") {
                 if ($categoria_item != $categoria) continue;
