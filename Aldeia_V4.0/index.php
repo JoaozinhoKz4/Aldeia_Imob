@@ -147,7 +147,7 @@
                                 <div class="">
                                     <select class="custom-select ml-2 mr-2 form-control" name="localizacao">
                                         <option value="">Selecione o Bairro desejado</option>
-                                        <option value="lago-norte">Lago Norte</option>
+                                        <option value="SUDOESTE">Lago Sul</option>
                                     </select>
                                 </div>
                             </div>
@@ -178,15 +178,15 @@
                                         <option>Selecione o Tipo de Imóvel</option>
                                         <option value="CASA">Casa</option>
                                         <option value="APARTAMENTO">Apartamento</option>
-                                        <option value="sala">Sala</option>
-                                        <option value="garagem">Garagem</option>
-                                        <option value="chale">Chalé</option>
-                                        <option value="loja">Loja</option>
-                                        <option value="fazenda">Fazenda</option>
-                                        <option value="predio">Prédio</option>
-                                        <option value="terreno">Terreno</option>
-                                        <option value="galpao">Galpão</option>
-                                        <option value="chacara">Chácara</option>
+                                        <option value="SALA">Sala</option>
+                                        <option value="GARAGEM">Garagem</option>
+                                        <option value="CHALE">Chalé</option>
+                                        <option value="LOJA">Loja</option>
+                                        <option value="FAZENDA">Fazenda</option>
+                                        <option value="PREDIO">Prédio</option>
+                                        <option value="TERRENO">Terreno</option>
+                                        <option value="GALPAO">Galpão</option>
+                                        <option value="CHACARA">Chácara</option>
                                     </select>
                                 </div>
                             </div>
@@ -345,7 +345,7 @@
                 if ($tipo != $tipo_imovel) continue;
             }
             if ($_GET['localizacao'] != "") {
-                if (utf8_decode($item -> Bairro) != $localizacao) continue;
+                if ($regiao != $localizacao ) continue;
             } 
             if ($_GET['categoria'] != "") {
                 if ($categoria_item != $categoria) continue;
@@ -513,6 +513,12 @@
             if ($_GET['valor-menor'] != "") {
                 if ($valor < $valor_menor) continue;
             } 
+            if ($_GET['tipo-imovel'] != "") {
+                if ($tipo != $tipo_imovel) continue;
+            }
+            if ($_GET['localizacao'] != "") {
+                if (utf8_decode($item -> Regiao) != $localizacao) continue;
+            } 
             if ($_GET['categoria'] != "") {
                 if ($categoria_item != $categoria) continue;
             }
@@ -527,7 +533,7 @@
                     echo '<input type="hidden" name="numero" value="'.$numero.'">';
                     echo '<input type="hidden" name="quadra" value="'.$quadra.'">';
                     echo '<input type="hidden" name="cep" value="'.utf8_decode($item -> CEP).'">';
-                    echo '<input type="hidden" name="bairro" value="'.utf8_decode($item -> Bairrocomercial).'">';
+                    echo '<input type="hidden" name="bairro" value="'.utf8_decode($item -> Regiao).'">';
                     echo '<input type="hidden" name="cidade" value="'.utf8_decode($item -> Cidade).'">';
                     echo '<input type="hidden" name="uni_fed" value="'.utf8_decode($item -> UnidadeFederativa).'">';
                     echo '<input type="hidden" name="regiao" value="'.$regiao.'">';
@@ -586,29 +592,6 @@
                     </div>
                 </div>
 
-                <!-- Pagination -->
-
-                <!--nav class="mt-4">
-                    <ul class="pagination justify-content-end">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <i class="ti-angle-left"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <i class="ti-angle-right"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav-->
 
             </div>
         </section> 
