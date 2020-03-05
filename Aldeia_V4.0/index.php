@@ -146,7 +146,7 @@
                                 <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i>Localização: </h5>
                                 <div class="">
                                     <select class="custom-select ml-2 mr-2 form-control" name="localizacao">
-                                        <option>Selecione o Bairro desejado</option>
+                                        <option value="">Selecione o Bairro desejado</option>
                                         <option value="lago-norte">Lago Norte</option>
                                     </select>
                                 </div>
@@ -176,8 +176,8 @@
                                 <div class="">
                                     <select class="custom-select ml-2 mr-2 form-control" name="tipo-imovel">
                                         <option>Selecione o Tipo de Imóvel</option>
-                                        <option value="casa">Casa</option>
-                                        <option value="apartamento">Apartamento</option>
+                                        <option value="CASA">Casa</option>
+                                        <option value="APARTAMENTO">Apartamento</option>
                                         <option value="sala">Sala</option>
                                         <option value="garagem">Garagem</option>
                                         <option value="chale">Chalé</option>
@@ -245,8 +245,8 @@
     if ( isset($_GET['valor-maior']) ){
         $valor_maior = $_GET['valor-maior'];
     }
-    if ( isset($_GET['posicao-sol']) ){
-        $posicao_sol = $_GET['posicao-sol'];
+    if ( isset($_GET['tipo-imovel']) ){
+        $tipo_imovel = $_GET['tipo-imovel'];
     }
     if ( isset($_GET['categoria']) ){
         $categoria = $_GET['categoria'];
@@ -340,6 +340,12 @@
             }
             if ($_GET['valor-menor'] != "") {
                 if ($valor < $valor_menor) continue;
+            }
+            if ($_GET['tipo-imovel'] != "") {
+                if ($tipo != $tipo_imovel) continue;
+            }
+            if ($_GET['localizacao'] != "") {
+                if (utf8_decode($item -> Bairro) != $localizacao) continue;
             } 
             if ($_GET['categoria'] != "") {
                 if ($categoria_item != $categoria) continue;

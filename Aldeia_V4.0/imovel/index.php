@@ -254,41 +254,19 @@
             <!-- Slider Main -->
             <div class="slider-main slider-kenburns inner-controls">
                 <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="assets/img/photos/slider01.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                       
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="assets/img/photos/slider02.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
+        <?php 
+                  foreach($fotos as $foto){
+                echo
+                    '<div class="slide">
+                        <div class="slide-bg bg-image-holder bg-image-fixed">
+                            <img src="'.$foto.'" alt="">
+                        </div>
+                        <div class="slide-content container text-center">
                         
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="assets/img/photos/slider03.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                     
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="assets/img/photos/slider04.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                        
-                    </div>
-                </div>
+                        </div>
+                    </div>';
+                  } 
+        ?>
             </div>
 
             <!-- Slider Navigation -->
