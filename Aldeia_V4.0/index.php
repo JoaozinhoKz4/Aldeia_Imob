@@ -4,7 +4,7 @@
 
 <!-- Meta -->
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"> 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- Title -->
@@ -47,7 +47,7 @@
                 <li><a href="#who-we-are">Quem somos</a></li>
                 <li><a href="#contact">Contato</a></li>
                 <li><a href="#flats">Comprar</a></li>
-                <li><a href="#flats">Vender</a></li>
+              <!--   <li><a href="#flats">Vender</a></li> -->
                 <li><a href="#flats">Alugar</a></li>
                 <li><a href="area-do-usuario/login/">Área do usuário</a></li>
             </ul>
@@ -147,7 +147,7 @@
                                 <div class="">
                                     <select class="custom-select ml-2 mr-2 form-control" name="localizacao">
                                         <option value="">Selecione o Bairro desejado</option>
-                                        <option value="SUDOESTE">Lago Sul</option>
+                                        <option value="LAGO SUL">Lago Sul</option>
                                     </select>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                 <label for="valor_imovel"><h5 class="mb-3"><i class="fa fa-search text-muted mr-2"></i>Tipo de Imóvel:</h5></label> 
                                 <div class="">
                                     <select class="custom-select ml-2 mr-2 form-control" name="tipo-imovel">
-                                        <option>Selecione o Tipo de Imóvel</option>
+                                        <option value="">Selecione o Tipo de Imóvel</option>
                                         <option value="CASA">Casa</option>
                                         <option value="APARTAMENTO">Apartamento</option>
                                         <option value="SALA">Sala</option>
@@ -194,7 +194,7 @@
                                 <label for="modalidade"><h5 class="mb-3"><i class="fa fa-home text-muted mr-2"></i>Você quer?</h5></label> 
                                 <div class="">
                                     <select class="custom-select ml-2 mr-2 form-control" name="categoria">
-                                        <option></option>
+                                        <option value="">Deseja Comprar ou Alugar?</option>
                                         <option value="Venda">Comprar</option>
                                         <option value="Locação">Alugar</option>
                                     </select>
@@ -364,7 +364,7 @@
                                     echo '<input type="hidden" name="bairro" value="'.utf8_decode($item -> Bairrocomercial).'">';
                                     echo '<input type="hidden" name="cidade" value="'.utf8_decode($item -> Cidade).'">';
                                     echo '<input type="hidden" name="uni_fed" value="'.utf8_decode($item -> UnidadeFederativa).'">';
-                                    echo '<input type="hidden" name="regiao" value="'.$regiao.'">';
+                                    echo '<input type="hidden" name="regiao" value="'.utf8_decode($item -> Regiao).'">';
                                     echo '<input type="hidden" name="ponto_ref" value="'.$ponto_ref.'">';
                                     echo '<input type="hidden" name="anuncio" value="'.utf8_decode($item -> Anuncioparainternet).'">';
                                     echo '<input type="hidden" name="categoria" value="'.utf8_decode($item -> Categoria).'">';

@@ -1,0 +1,6 @@
+Quero vender quero alugar -> redirecionar para formulário/Frase
+Retirar encontre seu imovel e colocar comprar alugar no lugar
+Logo e favicons responsivos
+
+Formatar valores no front-end
+Cobrar univen novamente acerca da codificação utf-8
