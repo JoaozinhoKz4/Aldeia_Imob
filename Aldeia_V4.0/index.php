@@ -42,13 +42,13 @@
         <nav id="navigation-main" class="module module-nav">
             <ul class="nav nav-main-horizontal">
                 <li><a href="#home">Início</a></li>
-                <li><a href="#flats">Encontre seu imóvel</a></li>
+                <li><a href="#flats">Comprar</a></li>
                 <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#flats">Alugar</a></li>
                 <li><a href="#who-we-are">Quem somos</a></li>
                 <li><a href="#contact">Contato</a></li>
                 <li><a href="#flats">Comprar</a></li>
               <!--   <li><a href="#flats">Vender</a></li> -->
-                <li><a href="#flats">Alugar</a></li>
                 <li><a href="area-do-usuario/login/">Área do usuário</a></li>
             </ul>
             <div class="selector"></div>
