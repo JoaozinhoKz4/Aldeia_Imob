@@ -229,93 +229,97 @@
                             <div class="objects-grid gutters-sm row">
 
                                 <?php
-                                 
-                                 function money_format($format, $number)
-                                 {
-                                     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?'.
-                                               '(?:#([0-9]+))?(?:\.([0-9]+))?([in%])/';
-                                     if (setlocale(LC_MONETARY, 0) == 'C') {
-                                         setlocale(LC_MONETARY, '');
-                                     }
-                                     $locale = localeconv();
-                                     preg_match_all($regex, $format, $matches, PREG_SET_ORDER);
-                                     foreach ($matches as $fmatch) {
-                                         $value = floatval($number);
-                                         $flags = array(
-                                             'fillchar'  => preg_match('/\=(.)/', $fmatch[1], $match) ?
-                                                            $match[1] : ' ',
-                                             'nogroup'   => preg_match('/\^/', $fmatch[1]) > 0,
-                                             'usesignal' => preg_match('/\+|\(/', $fmatch[1], $match) ?
-                                                            $match[0] : '+',
-                                             'nosimbol'  => preg_match('/\!/', $fmatch[1]) > 0,
-                                             'isleft'    => preg_match('/\-/', $fmatch[1]) > 0
-                                         );
-                                         $width      = trim($fmatch[2]) ? (int)$fmatch[2] : 0;
-                                         $left       = trim($fmatch[3]) ? (int)$fmatch[3] : 0;
-                                         $right      = trim($fmatch[4]) ? (int)$fmatch[4] : $locale['int_frac_digits'];
-                                         $conversion = $fmatch[5];
-                                 
-                                         $positive = true;
-                                         if ($value < 0) {
-                                             $positive = false;
-                                             $value  *= -1;
-                                         }
-                                         $letter = $positive ? 'p' : 'n';
-                                 
-                                         $prefix = $suffix = $cprefix = $csuffix = $signal = '';
-                                 
-                                         $signal = $positive ? $locale['positive_sign'] : $locale['negative_sign'];
-                                         switch (true) {
-                                             case $locale["{$letter}_sign_posn"] == 1 && $flags['usesignal'] == '+':
-                                                 $prefix = $signal;
-                                                 break;
-                                             case $locale["{$letter}_sign_posn"] == 2 && $flags['usesignal'] == '+':
-                                                 $suffix = $signal;
-                                                 break;
-                                             case $locale["{$letter}_sign_posn"] == 3 && $flags['usesignal'] == '+':
-                                                 $cprefix = $signal;
-                                                 break;
-                                             case $locale["{$letter}_sign_posn"] == 4 && $flags['usesignal'] == '+':
-                                                 $csuffix = $signal;
-                                                 break;
-                                             case $flags['usesignal'] == '(':
-                                             case $locale["{$letter}_sign_posn"] == 0:
-                                                 $prefix = '(';
-                                                 $suffix = ')';
-                                                 break;
-                                         }
-                                         if (!$flags['nosimbol']) {
-                                             $currency = $cprefix .
-                                                         ($conversion == 'i' ? $locale['int_curr_symbol'] : $locale['currency_symbol']) .
-                                                         $csuffix;
-                                         } else {
-                                             $currency = '';
-                                         }
-                                         $space  = $locale["{$letter}_sep_by_space"] ? ' ' : '';
-                                 
-                                         $value = number_format($value, $right, $locale['mon_decimal_point'],
-                                                  $flags['nogroup'] ? '' : $locale['mon_thousands_sep']);
-                                         $value = @explode($locale['mon_decimal_point'], $value);
-                                 
-                                         $n = strlen($prefix) + strlen($currency) + strlen($value[0]);
-                                         if ($left > 0 && $left > $n) {
-                                             $value[0] = str_repeat($flags['fillchar'], $left - $n) . $value[0];
-                                         }
-                                         $value = implode($locale['mon_decimal_point'], $value);
-                                         if ($locale["{$letter}_cs_precedes"]) {
-                                             $value = $prefix . $currency . $space . $value . $suffix;
-                                         } else {
-                                             $value = $prefix . $value . $space . $currency . $suffix;
-                                         }
-                                         if ($width > 0) {
-                                             $value = str_pad($value, $width, $flags['fillchar'], $flags['isleft'] ?
-                                                      STR_PAD_RIGHT : STR_PAD_LEFT);
-                                         }
-                                 
-                                         $format = str_replace($fmatch[0], $value, $format);
-                                     }
-                                     return $format;
-                                 } 
+                                setlocale(LC_MONETARY, 'pt_BR'); 
+                                function money_formats($format, $number)
+                                {
+                                    $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?' .
+                                        '(?:#([0-9]+))?(?:\.([0-9]+))?([in%])/';
+                                    if(setlocale(LC_MONETARY, 0) == 'C') {
+                                        setlocale(LC_MONETARY, '');
+                                    }
+                                    $locale = localeconv();
+                                    preg_match_all($regex, $format, $matches, PREG_SET_ORDER);
+                                    foreach ($matches as $fmatch) {
+                                        $value = floatval($number);
+                                        $flags = array(
+                                            'fillchar'  => preg_match('/\=(.)/', $fmatch[1], $match) ?
+                                                $match[1] : ' ',
+                                            'nogroup'   => preg_match('/\^/', $fmatch[1]) > 0,
+                                            'usesignal' => preg_match('/\+|\(/', $fmatch[1], $match) ?
+                                                $match[0] : '+',
+                                            'nosimbol'  => preg_match('/\!/', $fmatch[1]) > 0,
+                                            'isleft'    => preg_match('/\-/', $fmatch[1]) > 0
+                                        );
+                                        $width      = trim($fmatch[2]) ? (int) $fmatch[2] : 0;
+                                        $left       = trim($fmatch[3]) ? (int) $fmatch[3] : 0;
+                                        $right      = trim($fmatch[4]) ? (int) $fmatch[4] : $locale['int_frac_digits'];
+                                        $conversion = $fmatch[5];
+
+                                        $positive = true;
+                                        if ($value < 0) {
+                                            $positive = false;
+                                            $value  *= -1;
+                                        }
+                                        $letter = $positive ? 'p' : 'n';
+
+                                        $prefix = $suffix = $cprefix = $csuffix = $signal = '';
+
+                                        $signal = $positive ? $locale['positive_sign'] : $locale['negative_sign'];
+                                        switch (true) {
+                                            case $locale["{$letter}_sign_posn"] == 1 && $flags['usesignal'] == '+':
+                                                $prefix = $signal;
+                                                break;
+                                            case $locale["{$letter}_sign_posn"] == 2 && $flags['usesignal'] == '+':
+                                                $suffix = $signal;
+                                                break;
+                                            case $locale["{$letter}_sign_posn"] == 3 && $flags['usesignal'] == '+':
+                                                $cprefix = $signal;
+                                                break;
+                                            case $locale["{$letter}_sign_posn"] == 4 && $flags['usesignal'] == '+':
+                                                $csuffix = $signal;
+                                                break;
+                                            case $flags['usesignal'] == '(':
+                                            case $locale["{$letter}_sign_posn"] == 0:
+                                                $prefix = '(';
+                                                $suffix = ')';
+                                                break;
+                                        }
+                                        if (!$flags['nosimbol']) {
+                                            $currency = $cprefix .
+                                                ($conversion == 'i' ? $locale['int_curr_symbol'] : $locale['currency_symbol']) .
+                                                $csuffix;
+                                        } else {
+                                            $currency = '';
+                                        }
+                                        $space  = $locale["{$letter}_sep_by_space"] ? ' ' : '';
+
+                                        $value = number_format(
+                                            $value,
+                                            $right,
+                                            $locale['mon_decimal_point'],
+                                            $flags['nogroup'] ? '' : $locale['mon_thousands_sep']
+                                        );
+                                        $value = @explode($locale['mon_decimal_point'], $value);
+
+                                        $n = strlen($prefix) + strlen($currency) + strlen($value[0]);
+                                        if ($left > 0 && $left > $n) {
+                                            $value[0] = str_repeat($flags['fillchar'], $left - $n) . $value[0];
+                                        }
+                                        $value = implode($locale['mon_decimal_point'], $value);
+                                        if ($locale["{$letter}_cs_precedes"]) {
+                                            $value = $prefix . $currency . $space . $value . $suffix;
+                                        } else {
+                                            $value = $prefix . $value . $space . $currency . $suffix;
+                                        }
+                                        if ($width > 0) {
+                                            $value = str_pad($value, $width, $flags['fillchar'], $flags['isleft'] ?
+                                                STR_PAD_RIGHT : STR_PAD_LEFT);
+                                        }
+
+                                        $format = str_replace($fmatch[0], $value, $format);
+                                    }
+                                    return $format;
+                                }
                                 //// Validação de qual o filtro estabelecido
                                 if (isset($_GET['area-menor'])) {
                                     $area_menor = $_GET['area-menor'];
@@ -349,30 +353,29 @@
                                 $xml = simplexml_load_file($link)->Imoveis;
                                 $contador = 0;
                                 foreach ($xml->Imovel as $item) {
-
-                                    if (utf8_decode($item->Titulo) == "") {
-                                        $titulo = utf8_decode($item->Bairro);
+                                    if ($item->Titulo == "") {
+                                        $titulo = $item->Bairro;
                                     } else {
-                                        $titulo = utf8_decode($item->Titulo);
+                                        $titulo = $item->Titulo;
                                     }
 
-                                    $tipo = utf8_decode($item->Tipo);
-                                    $area = utf8_decode($item->Areatotalsemdeciamal);
-                                    $quartos = utf8_decode($item->Dormitorios);
-                                    $foto = utf8_decode($item->Fotos->Foto->URL);
+                                    $tipo = $item->Tipo;
+                                    $area = $item->Areatotalsemdeciamal;
+                                    $quartos = $item->Dormitorios;
+                                    $foto = $item->Fotos->Foto->URL;
 
-                                    if (utf8_decode($item->Valorvenda) != "") {
-                                        $valor = utf8_decode($item->Valorvenda);
+                                    if ($item->Valorvenda != "") {
+                                        $valor = $item->Valorvenda;
                                     }
-                                    if (utf8_decode($item->Valorlocacao) != "") {
-                                        $valor = utf8_decode($item->Valorlocacao);
+                                    if ($item->Valorlocacao != "") {
+                                        $valor = $item->Valorlocacao;
                                     }
-                                    if (utf8_decode($item->Valortemporada) != "") {
-                                        $valor = utf8_decode($item->Valortemporada);
+                                    if ($item->Valortemporada != "") {
+                                        $valor = $item->Valortemporada;
                                     }
-                                    if (utf8_decode($item->Valorvenda) != "" && utf8_decode($item->Valorvenda) != 0.00) {
+                                    if ($item->Valorvenda != "" && $item->Valorvenda != 0.00) {
                                         $categoria_item = "Venda";
-                                    } else if (utf8_decode($item->Valorlocacao) != "" && utf8_decode($item->Valorlocacao) != 0.00) {
+                                    } else if ($item->Valorlocacao != "" && $item->Valorlocacao != 0.00) {
                                         $categoria_item = "Locação";
                                     } else {
                                         $categoria_item = "Indefinido";
@@ -380,92 +383,92 @@
                                     //// DEfinição das variáveis a serem enviadas para a página de cada anúncio
                                     $fotos = array();
                                     foreach ($item->Fotos->Foto as $x) {
-                                        $fotos[] = utf8_decode($x->URL);
+                                        $fotos[] = $x->URL;
                                     }
-                                    if (utf8_decode($item->Numero) != "") {
-                                        $numero = utf8_decode($item->Numero);
+                                    if ($item->Numero != "") {
+                                        $numero = $item->Numero;
                                     } else {
-                                        $numero = NULL;
+                                        $numero = null;
                                     }
-                                    if (utf8_decode($item->Quadra) != "") {
-                                        $quadra = utf8_decode($item->Quadra);
+                                    if ($item->Quadra != "") {
+                                        $quadra = $item->Quadra;
                                     } else {
-                                        $quadra = NULL;
+                                        $quadra = null;
                                     }
-                                    if (utf8_decode($item->Regiao) != "") {
-                                        $regiao = utf8_decode($item->Regiao);
+                                    if ($item->Regiao != "") {
+                                        $regiao = $item->Regiao;
                                     } else {
-                                        $regiao = NULL;
+                                        $regiao = null;
                                     }
-                                    if (utf8_decode($item->Pontoreferencia) != "") {
-                                        $ponto_ref = utf8_decode($item->Pontoreferencia);
+                                    if ($item->Pontoreferencia != "") {
+                                        $ponto_ref = $item->Pontoreferencia;
                                     } else {
-                                        $ponto_ref = NULL;
+                                        $ponto_ref = null;
                                     }
-                                    if (utf8_decode($item->Areaterrenosemdeciamal) != "") {
-                                        $terreno = utf8_decode($item->Areaterrenosemdeciamal);
+                                    if ($item->Areaterrenosemdeciamal != "") {
+                                        $terreno = $item->Areaterrenosemdeciamal;
                                     } else {
-                                        $terreno = NULL;
+                                        $terreno = null;
                                     }
-                                    if (utf8_decode($item->Areacosntruidasemdeciamal) != "") {
-                                        $construida = utf8_decode($item->Areacosntruidasemdeciamal);
+                                    if ($item->Areacosntruidasemdeciamal != "") {
+                                        $construida = $item->Areacosntruidasemdeciamal;
                                     } else {
-                                        $construida = NULL;
+                                        $construida = null;
                                     }
-                                    if (utf8_decode($item->Areautilsemdeciamal) != "") {
-                                        $util = utf8_decode($item->Areautilsemdeciamal);
+                                    if ($item->Areautilsemdeciamal != "") {
+                                        $util = $item->Areautilsemdeciamal;
                                     } else {
-                                        $util = NULL;
+                                        $util = null;
                                     }
-                                    if (utf8_decode($item->Banheiroauxiliar) != "") {
-                                        $banheiro_a = utf8_decode($item->Banheiroauxiliar);
+                                    if ($item->Banheiroauxiliar != "") {
+                                        $banheiro_a = $item->Banheiroauxiliar;
                                     } else {
-                                        $banheiro_a = NULL;
+                                        $banheiro_a = null;
                                     }
                                     if (utf8_decode($item->Banheiroempregada) != "") {
                                         $banheiro_e = utf8_decode($item->Banheiroempregada);
                                     } else {
-                                        $banheiro_e = NULL;
+                                        $banheiro_e = null;
                                     }
                                     if (utf8_decode($item->Banheiro) != "") {
                                         $banheiro1 = utf8_decode($item->Banheiro);
                                     } else {
-                                        $banheiro1 = NULL;
+                                        $banheiro1 = null;
                                     }
                                     if (utf8_decode($item->Banheiro2) != "") {
                                         $banheiro2 = utf8_decode($item->Banheiro2);
                                     } else {
-                                        $banheiro2 = NULL;
+                                        $banheiro2 = null;
                                     }
                                     if (utf8_decode($item->Dormitorios) != "") {
                                         $dormitorio = utf8_decode($item->Dormitorios);
                                     } else {
-                                        $dormitorio = NULL;
+                                        $dormitorio = null;
                                     }
                                     if (utf8_decode($item->Valorvenda) != "") {
                                         $valor_venda = utf8_decode($item->Valorvenda);
                                     } else {
-                                        $valor_venda = NULL;
+                                        $valor_venda = null;
                                     }
                                     if (utf8_decode($item->Valorlocacao) != "") {
                                         $valor_locacao = utf8_decode($item->Valorlocacao);
                                     } else {
-                                        $valor_locacao = NULL;
+                                        $valor_locacao = null;
                                     }
                                     if (utf8_decode($item->Valortemporada) != "") {
                                         $valor_temporada = utf8_decode($item->Valortemporada);
                                     } else {
-                                        $valor_temporada = NULL;
+                                        $valor_temporada = null;
                                     }
                                     if (utf8_decode($item->Valorcondominio) != "") {
                                         $valor_condominio = utf8_decode($item->Valorcondominio);
                                     } else {
-                                        $valor_condominio = NULL;
+                                        $valor_condominio = null;
                                     }
                                     if (utf8_decode($item->Valoriptu) != "") {
                                         $valor_iptu = utf8_decode($item->Valoriptu);
                                     } else {
-                                        $valor_iptu = NULL;
+                                        $valor_iptu = null;
                                     }
 
                                     //////// Filtro
@@ -508,15 +511,15 @@
                                     echo '<input type="hidden" name="numero" value="' . $numero . '">';
                                     echo '<input type="hidden" name="quadra" value="' . $quadra . '">';
                                     echo '<input type="hidden" name="cep" value="' . utf8_decode($item->CEP) . '">';
-                                    echo '<input type="hidden" name="bairro" value="' . utf8_decode($item->Bairrocomercial) . '">';
-                                    echo '<input type="hidden" name="cidade" value="' . utf8_decode($item->Cidade) . '">';
+                                    echo '<input type="hidden" name="bairro" value="' . $item->Bairrocomercial . '">';
+                                    echo '<input type="hidden" name="cidade" value="' . $item->Cidade . '">';
                                     echo '<input type="hidden" name="uni_fed" value="' . utf8_decode($item->UnidadeFederativa) . '">';
-                                    echo '<input type="hidden" name="regiao" value="' . utf8_decode($item->Regiao) . '">';
+                                    echo '<input type="hidden" name="regiao" value="' . $item->Regiao . '">';
                                     echo '<input type="hidden" name="ponto_ref" value="' . $ponto_ref . '">';
-                                    echo '<input type="hidden" name="anuncio" value="' . utf8_decode($item->Anuncioparainternet) . '">';
-                                    echo '<input type="hidden" name="categoria" value="' . utf8_decode($item->Categoria) . '">';
-                                    echo '<input type="hidden" name="finalidade" value="' . utf8_decode($item->Finalidade) . '">';
-                                    echo '<input type="hidden" name="tipo" value="' . utf8_decode($item->Tipo) . '">';
+                                    echo '<input type="hidden" name="anuncio" value="' . $item->Anuncioparainternet . '">';
+                                    echo '<input type="hidden" name="categoria" value="' . $item->Categoria . '">';
+                                    echo '<input type="hidden" name="finalidade" value="' . $item->Finalidade . '">';
+                                    echo '<input type="hidden" name="tipo" value="' . $item->Tipo . '">';
                                     echo '<input type="hidden" name="categoria_item" value="' . $categoria_item . '">';
                                     echo '<input type="hidden" name="area_total" value="' . $area . '">';
                                     echo '<input type="hidden" name="area_terreno" value="' . $terreno . '">';
@@ -608,87 +611,87 @@
                                     if (utf8_decode($item->Numero) != "") {
                                         $numero = utf8_decode($item->Numero);
                                     } else {
-                                        $numero = NULL;
+                                        $numero = null;
                                     }
                                     if (utf8_decode($item->Quadra) != "") {
                                         $quadra = utf8_decode($item->Quadra);
                                     } else {
-                                        $quadra = NULL;
+                                        $quadra = null;
                                     }
                                     if (utf8_decode($item->Regiao) != "") {
                                         $regiao = utf8_decode($item->Regiao);
                                     } else {
-                                        $regiao = NULL;
+                                        $regiao = null;
                                     }
                                     if (utf8_decode($item->Pontoreferencia) != "") {
                                         $ponto_ref = utf8_decode($item->Pontoreferencia);
                                     } else {
-                                        $ponto_ref = NULL;
+                                        $ponto_ref = null;
                                     }
                                     if (utf8_decode($item->Areaterrenosemdeciamal) != "") {
                                         $terreno = utf8_decode($item->Areaterrenosemdeciamal);
                                     } else {
-                                        $terreno = NULL;
+                                        $terreno = null;
                                     }
                                     if (utf8_decode($item->Areacosntruidasemdeciamal) != "") {
                                         $construida = utf8_decode($item->Areacosntruidasemdeciamal);
                                     } else {
-                                        $construida = NULL;
+                                        $construida = null;
                                     }
                                     if (utf8_decode($item->Areautilsemdeciamal) != "") {
                                         $util = utf8_decode($item->Areautilsemdeciamal);
                                     } else {
-                                        $util = NULL;
+                                        $util = null;
                                     }
                                     if (utf8_decode($item->Banheiroauxiliar) != "") {
                                         $banheiro_a = utf8_decode($item->Banheiroauxiliar);
                                     } else {
-                                        $banheiro_a = NULL;
+                                        $banheiro_a = null;
                                     }
                                     if (utf8_decode($item->Banheiroempregada) != "") {
                                         $banheiro_e = utf8_decode($item->Banheiroempregada);
                                     } else {
-                                        $banheiro_e = NULL;
+                                        $banheiro_e = null;
                                     }
                                     if (utf8_decode($item->Banheiro) != "") {
                                         $banheiro1 = utf8_decode($item->Banheiro);
                                     } else {
-                                        $banheiro1 = NULL;
+                                        $banheiro1 = null;
                                     }
                                     if (utf8_decode($item->Banheiro2) != "") {
                                         $banheiro2 = utf8_decode($item->Banheiro2);
                                     } else {
-                                        $banheiro2 = NULL;
+                                        $banheiro2 = null;
                                     }
                                     if (utf8_decode($item->Dormitorios) != "") {
                                         $dormitorio = utf8_decode($item->Dormitorios);
                                     } else {
-                                        $dormitorio = NULL;
+                                        $dormitorio = null;
                                     }
                                     if (utf8_decode($item->Valorvenda) != "") {
                                         $valor_venda = utf8_decode($item->Valorvenda);
                                     } else {
-                                        $valor_venda = NULL;
+                                        $valor_venda = null;
                                     }
                                     if (utf8_decode($item->Valorlocacao) != "") {
                                         $valor_locacao = utf8_decode($item->Valorlocacao);
                                     } else {
-                                        $valor_locacao = NULL;
+                                        $valor_locacao = null;
                                     }
                                     if (utf8_decode($item->Valortemporada) != "") {
                                         $valor_temporada = utf8_decode($item->Valortemporada);
                                     } else {
-                                        $valor_temporada = NULL;
+                                        $valor_temporada = null;
                                     }
                                     if (utf8_decode($item->Valorcondominio) != "") {
                                         $valor_condominio = utf8_decode($item->Valorcondominio);
                                     } else {
-                                        $valor_condominio = NULL;
+                                        $valor_condominio = null;
                                     }
                                     if (utf8_decode($item->Valoriptu) != "") {
                                         $valor_iptu = utf8_decode($item->Valoriptu);
                                     } else {
-                                        $valor_iptu = NULL;
+                                        $valor_iptu = null;
                                     }
 
                                     //////// Filtro
