@@ -337,7 +337,7 @@ var Core = {
             }
 
             // Contact Form
-            var $offerForm  = $('#offer-form');
+            /* var $offerForm  = $('#offer-form');
 
             if($offerForm.length>0) {
             
@@ -371,7 +371,7 @@ var Core = {
                 });
 
             }
-
+ */
         },
         gallery: function() {
 

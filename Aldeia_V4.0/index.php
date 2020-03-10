@@ -45,8 +45,8 @@
             <ul class="nav nav-main-horizontal pr-4">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#flats">Comprar</a></li>
-                <li><a href="#gallery">Galeria</a></li>
                 <li><a href="#flats">Alugar</a></li>
+                <li><a href="#gallery">Galeria</a></li>
                 <li><a href="#who-we-are">Quem somos</a></li>
                 <li><a href="#contact">Contato</a></li>
                 <li><a href="#flats">Comprar</a></li>
@@ -857,7 +857,7 @@
                             Edifício Marianna</br>
                         </address>
                         <p class="lead">
-                            E-mail: <a class="link-inherit" href="#">aldeia@imobiliariaaldeia.com.br</a><br>
+                            E-mail: aldeia@imobiliariaaldeia.com.br<br>
                             Telefone: (61) 3034-6677 </br>
                             Celular: (61) 99944-1932
                         </p>

@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema aldeia_db_beta
+-- Schema u483503649_imob
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema aldeia_db_beta
+-- Schema u483503649_imob
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `aldeia_db_beta` DEFAULT CHARACTER SET utf8 ;
-USE `aldeia_db_beta` ;
+CREATE SCHEMA IF NOT EXISTS `u483503649_imob` DEFAULT CHARACTER SET utf8 ;
+USE `u483503649_imob` ;
 
 -- -----------------------------------------------------
--- Table `aldeia_db_beta`.`user`
+-- Table `u483503649_imob`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aldeia_db_beta`.`user` (
+CREATE TABLE IF NOT EXISTS `u483503649_imob`.`user` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(90) NOT NULL,
   `login` VARCHAR(45) NOT NULL,
@@ -32,9 +32,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `aldeia_db_beta`.`docs`
+-- Table `u483503649_imob`.`docs`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aldeia_db_beta`.`docs` (
+CREATE TABLE IF NOT EXISTS `u483503649_imob`.`docs` (
   `id_doc` INT NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(45) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,

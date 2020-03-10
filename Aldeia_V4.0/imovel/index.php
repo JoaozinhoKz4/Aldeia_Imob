@@ -1,4 +1,5 @@
 <?php 
+session_start();
 function money_format($format, $number)
 {
     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?'.
@@ -262,19 +263,19 @@ function money_format($format, $number)
                                     <?php 
                                     if($venda != "") {
                             echo '<dt class="col-sm-6">Valor de venda:</dt>
-                                    <dd class="col-sm-6">R$'." ".$venda.'</dd>'; }
+                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['venda']). '</dd>'; }
                                     if($locacao != "") {
                             echo '<dt class="col-sm-6">Valor do aluguel:</dt>
-                                    <dd class="col-sm-6">R$'." ".$locacao.'</dd>'; }
+                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['locacao']). '</dd>'; }
                                     if($temporada != "") {
                             echo '<dt class="col-sm-6">Valor da temporada:</dt>
-                                    <dd class="col-sm-6">R$'." ".$temporada.'</dd>'; }
+                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['temporada']). '</dd>'; }
                                     if($condominio != "") {
                             echo '<dt class="col-sm-6">Valor do condomínio:</dt>
-                                    <dd class="col-sm-6">R$'." ".$condominio.'</dd>'; }
+                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['condominio']). '</dd>'; }
                                     if($iptu != "") {
                             echo '<dt class="col-sm-6">Valor do IPTU:</dt>
-                                    <dd class="col-sm-6">R$'." ".$iptu.'</dd>'; }
+                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['iptu']). '</dd>'; }
                                     if($dormitorio != "") {
                             echo    '<dt class="col-sm-6">Quartos:</dt>
                                     <dd class="col-sm-6">'.$dormitorio.'</dd>'; }
@@ -427,25 +428,36 @@ function money_format($format, $number)
                     <div class="col-lg-4 push-lg-2 pl-lg-5 pt-5 pt-lg-0 dark">
                         <h2 class="mb-2">Make an offer!</h2>
                         <p class="lead">Mauris dolor orci, sagittis ut varius in, interdum nec sapien.</p>
-                        <form action="#" id="offer-form" data-validate>
+                        <form method="post" action="../assets/php/offer-form.php" id="offer-form"> 
                             <div class="form-group">
-                                <label>Name:</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter here" required>
+                                <label>Nome:</label>
+                                <input type="text" name="name" class="form-control" placeholder="Insira seu nome" required>
                             </div>
                             <div class="form-group">
-                                <label>E-mail:</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter here" required>
+                                <label>Email:</label>
+                                <input type="email" name="email" class="form-control" placeholder="Insira o e-mail para contato" required>
                             </div>
                             <div class="form-group">
-                                <label>Phone number:</label>
-                                <input type="text" name="phone" class="form-control" placeholder="Enter here" required>
+                                <label>Telefone:</label>
+                                <input type="text" name="phone" class="form-control" placeholder="Insira telefone para contato" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Deseja agendar visita ou fazer oferta?</label>
+                                <select class="custom-select form-control" name="tipo-contato" required>
+                                    <option value="visita">Agendar Visita</option>
+                                    <option value="oferta">Fazer Oferta</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                            <label>Insira sua proposta:</label>
+                            <input type="text" name="oferta" class="form-control" placeholder="Faça sua oferta ao imóvel" required>
                             </div>
                             <button class="btn btn-primary btn-submit btn-block" type="submit">
-                                <span class="description">Agende sua visita!</span>
+                                <span class="description">Enviar Email!</span>
                                 <span class="success">
                                     <svg x="0px" y="0px" viewBox="0 0 32 32"><path stroke-dasharray="19.79 19.79" stroke-dashoffset="19.79" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"/></svg>
                                 </span>
-                                <span class="error">Try again...</span>
+                                <span class="error">Tente novamente</span>
                             </button>
                         </form>
                     </div>
@@ -617,4 +629,5 @@ function money_format($format, $number)
     else {
         header("Location: ../");
     }
+    $_SESSION['var_titulo']= $titulo;
 ?>
