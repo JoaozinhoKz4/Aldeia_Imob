@@ -1,5 +1,5 @@
 <?php 
-function money_format($format, $number)
+function money_formats($format, $number)
 {
     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?'.
               '(?:#([0-9]+))?(?:\.([0-9]+))?([in%])/';
@@ -111,7 +111,7 @@ function money_format($format, $number)
         $banheiro1 = $_POST['banheiro1'];
         $banheiro2 = $_POST['banheiro2'];
         $dormitorio = $_POST['dormitorio'];
-        $valor = money_format("%.2n",$_POST['valor']);
+        $valor = money_formats("%.2n",$_POST['valor']);
         $venda = $_POST['venda'];
         $temporada = $_POST['temporada'];
         $locacao = $_POST['locacao'];
