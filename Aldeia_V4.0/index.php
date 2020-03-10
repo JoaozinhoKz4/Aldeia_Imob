@@ -350,29 +350,29 @@
                                 $contador = 0;
                                 foreach ($xml->Imovel as $item) {
 
-                                    if (utf8_decode($item->Titulo) == "") {
-                                        $titulo = utf8_decode($item->Bairro);
+                                    if ($item->Titulo ==""){
+                                        $titulo = $item->Bairro;
                                     } else {
-                                        $titulo = utf8_decode($item->Titulo);
+                                        $titulo = $item->Titulo;
                                     }
 
-                                    $tipo = utf8_decode($item->Tipo);
-                                    $area = utf8_decode($item->Areatotalsemdeciamal);
-                                    $quartos = utf8_decode($item->Dormitorios);
-                                    $foto = utf8_decode($item->Fotos->Foto->URL);
+                                    $tipo = $item->Tipo;
+                                    $area = $item->Areatotalsemdeciamal;
+                                    $quartos = $item->Dormitorios;
+                                    $foto = $item->Fotos->Foto->URL;
 
-                                    if (utf8_decode($item->Valorvenda) != "") {
-                                        $valor = utf8_decode($item->Valorvenda);
+                                    if ($item->Valorvenda != "") {
+                                        $valor = $item->Valorvenda;
                                     }
-                                    if (utf8_decode($item->Valorlocacao) != "") {
-                                        $valor = utf8_decode($item->Valorlocacao);
+                                    if ($item->Valorlocacao != "") {
+                                        $valor = $item->Valorlocacao;
                                     }
-                                    if (utf8_decode($item->Valortemporada) != "") {
-                                        $valor = utf8_decode($item->Valortemporada);
+                                    if ($item->Valortemporada != "") {
+                                        $valor = $item->Valortemporada;
                                     }
-                                    if (utf8_decode($item->Valorvenda) != "" && utf8_decode($item->Valorvenda) != 0.00) {
+                                    if ($item->Valorvenda != "" && $item->Valorvenda != 0.00) {
                                         $categoria_item = "Venda";
-                                    } else if (utf8_decode($item->Valorlocacao) != "" && utf8_decode($item->Valorlocacao) != 0.00) {
+                                    } else if ($item->Valorlocacao != "" && $item->Valorlocacao != 0.00) {
                                         $categoria_item = "Locação";
                                     } else {
                                         $categoria_item = "Indefinido";
@@ -380,92 +380,92 @@
                                     //// DEfinição das variáveis a serem enviadas para a página de cada anúncio
                                     $fotos = array();
                                     foreach ($item->Fotos->Foto as $x) {
-                                        $fotos[] = utf8_decode($x->URL);
+                                        $fotos[] = $x->URL;
                                     }
-                                    if (utf8_decode($item->Numero) != "") {
-                                        $numero = utf8_decode($item->Numero);
+                                    if ($item->Numero != "") {
+                                        $numero = $item->Numero;
                                     } else {
-                                        $numero = NULL;
+                                        $numero = null;
                                     }
-                                    if (utf8_decode($item->Quadra) != "") {
-                                        $quadra = utf8_decode($item->Quadra);
+                                    if ($item->Quadra != "") {
+                                        $quadra = $item->Quadra;
                                     } else {
-                                        $quadra = NULL;
+                                        $quadra = null;
                                     }
-                                    if (utf8_decode($item->Regiao) != "") {
-                                        $regiao = utf8_decode($item->Regiao);
+                                    if ($item->Regiao != "") {
+                                        $regiao = $item->Regiao;
                                     } else {
-                                        $regiao = NULL;
+                                        $regiao = null;
                                     }
-                                    if (utf8_decode($item->Pontoreferencia) != "") {
-                                        $ponto_ref = utf8_decode($item->Pontoreferencia);
+                                    if ($item->Pontoreferencia != "") {
+                                        $ponto_ref = $item->Pontoreferencia;
                                     } else {
-                                        $ponto_ref = NULL;
+                                        $ponto_ref = null;
                                     }
-                                    if (utf8_decode($item->Areaterrenosemdeciamal) != "") {
-                                        $terreno = utf8_decode($item->Areaterrenosemdeciamal);
+                                    if ($item->Areaterrenosemdeciamal != "") {
+                                        $terreno = $item->Areaterrenosemdeciamal;
                                     } else {
-                                        $terreno = NULL;
+                                        $terreno = null;
                                     }
-                                    if (utf8_decode($item->Areacosntruidasemdeciamal) != "") {
-                                        $construida = utf8_decode($item->Areacosntruidasemdeciamal);
+                                    if ($item->Areacosntruidasemdeciamal != "") {
+                                        $construida = $item->Areacosntruidasemdeciamal;
                                     } else {
-                                        $construida = NULL;
+                                        $construida = null;
                                     }
-                                    if (utf8_decode($item->Areautilsemdeciamal) != "") {
-                                        $util = utf8_decode($item->Areautilsemdeciamal);
+                                    if ($item->Areautilsemdeciamal != "") {
+                                        $util = $item->Areautilsemdeciamal;
                                     } else {
-                                        $util = NULL;
+                                        $util = null;
                                     }
-                                    if (utf8_decode($item->Banheiroauxiliar) != "") {
-                                        $banheiro_a = utf8_decode($item->Banheiroauxiliar);
+                                    if ($item->Banheiroauxiliar != "") {
+                                        $banheiro_a = $item->Banheiroauxiliar;
                                     } else {
-                                        $banheiro_a = NULL;
+                                        $banheiro_a = null;
                                     }
                                     if (utf8_decode($item->Banheiroempregada) != "") {
                                         $banheiro_e = utf8_decode($item->Banheiroempregada);
                                     } else {
-                                        $banheiro_e = NULL;
+                                        $banheiro_e = null;
                                     }
                                     if (utf8_decode($item->Banheiro) != "") {
                                         $banheiro1 = utf8_decode($item->Banheiro);
                                     } else {
-                                        $banheiro1 = NULL;
+                                        $banheiro1 = null;
                                     }
                                     if (utf8_decode($item->Banheiro2) != "") {
                                         $banheiro2 = utf8_decode($item->Banheiro2);
                                     } else {
-                                        $banheiro2 = NULL;
+                                        $banheiro2 = null;
                                     }
                                     if (utf8_decode($item->Dormitorios) != "") {
                                         $dormitorio = utf8_decode($item->Dormitorios);
                                     } else {
-                                        $dormitorio = NULL;
+                                        $dormitorio = null;
                                     }
                                     if (utf8_decode($item->Valorvenda) != "") {
                                         $valor_venda = utf8_decode($item->Valorvenda);
                                     } else {
-                                        $valor_venda = NULL;
+                                        $valor_venda = null;
                                     }
                                     if (utf8_decode($item->Valorlocacao) != "") {
                                         $valor_locacao = utf8_decode($item->Valorlocacao);
                                     } else {
-                                        $valor_locacao = NULL;
+                                        $valor_locacao = null;
                                     }
                                     if (utf8_decode($item->Valortemporada) != "") {
                                         $valor_temporada = utf8_decode($item->Valortemporada);
                                     } else {
-                                        $valor_temporada = NULL;
+                                        $valor_temporada = null;
                                     }
                                     if (utf8_decode($item->Valorcondominio) != "") {
                                         $valor_condominio = utf8_decode($item->Valorcondominio);
                                     } else {
-                                        $valor_condominio = NULL;
+                                        $valor_condominio = null;
                                     }
                                     if (utf8_decode($item->Valoriptu) != "") {
                                         $valor_iptu = utf8_decode($item->Valoriptu);
                                     } else {
-                                        $valor_iptu = NULL;
+                                        $valor_iptu = null;
                                     }
 
                                     //////// Filtro
@@ -508,15 +508,15 @@
                                     echo '<input type="hidden" name="numero" value="' . $numero . '">';
                                     echo '<input type="hidden" name="quadra" value="' . $quadra . '">';
                                     echo '<input type="hidden" name="cep" value="' . utf8_decode($item->CEP) . '">';
-                                    echo '<input type="hidden" name="bairro" value="' . utf8_decode($item->Bairrocomercial) . '">';
-                                    echo '<input type="hidden" name="cidade" value="' . utf8_decode($item->Cidade) . '">';
+                                    echo '<input type="hidden" name="bairro" value="' . $item->Bairrocomercial . '">';
+                                    echo '<input type="hidden" name="cidade" value="' . $item->Cidade . '">';
                                     echo '<input type="hidden" name="uni_fed" value="' . utf8_decode($item->UnidadeFederativa) . '">';
-                                    echo '<input type="hidden" name="regiao" value="' . utf8_decode($item->Regiao) . '">';
+                                    echo '<input type="hidden" name="regiao" value="' . $item->Regiao . '">';
                                     echo '<input type="hidden" name="ponto_ref" value="' . $ponto_ref . '">';
-                                    echo '<input type="hidden" name="anuncio" value="' . utf8_decode($item->Anuncioparainternet) . '">';
-                                    echo '<input type="hidden" name="categoria" value="' . utf8_decode($item->Categoria) . '">';
-                                    echo '<input type="hidden" name="finalidade" value="' . utf8_decode($item->Finalidade) . '">';
-                                    echo '<input type="hidden" name="tipo" value="' . utf8_decode($item->Tipo) . '">';
+                                    echo '<input type="hidden" name="anuncio" value="' . $item->Anuncioparainternet . '">';
+                                    echo '<input type="hidden" name="categoria" value="' . $item->Categoria . '">';
+                                    echo '<input type="hidden" name="finalidade" value="' . $item->Finalidade . '">';
+                                    echo '<input type="hidden" name="tipo" value="' . $item->Tipo . '">';
                                     echo '<input type="hidden" name="categoria_item" value="' . $categoria_item . '">';
                                     echo '<input type="hidden" name="area_total" value="' . $area . '">';
                                     echo '<input type="hidden" name="area_terreno" value="' . $terreno . '">';
@@ -608,87 +608,87 @@
                                     if (utf8_decode($item->Numero) != "") {
                                         $numero = utf8_decode($item->Numero);
                                     } else {
-                                        $numero = NULL;
+                                        $numero = null;
                                     }
                                     if (utf8_decode($item->Quadra) != "") {
                                         $quadra = utf8_decode($item->Quadra);
                                     } else {
-                                        $quadra = NULL;
+                                        $quadra = null;
                                     }
                                     if (utf8_decode($item->Regiao) != "") {
                                         $regiao = utf8_decode($item->Regiao);
                                     } else {
-                                        $regiao = NULL;
+                                        $regiao = null;
                                     }
                                     if (utf8_decode($item->Pontoreferencia) != "") {
                                         $ponto_ref = utf8_decode($item->Pontoreferencia);
                                     } else {
-                                        $ponto_ref = NULL;
+                                        $ponto_ref = null;
                                     }
                                     if (utf8_decode($item->Areaterrenosemdeciamal) != "") {
                                         $terreno = utf8_decode($item->Areaterrenosemdeciamal);
                                     } else {
-                                        $terreno = NULL;
+                                        $terreno = null;
                                     }
                                     if (utf8_decode($item->Areacosntruidasemdeciamal) != "") {
                                         $construida = utf8_decode($item->Areacosntruidasemdeciamal);
                                     } else {
-                                        $construida = NULL;
+                                        $construida = null;
                                     }
                                     if (utf8_decode($item->Areautilsemdeciamal) != "") {
                                         $util = utf8_decode($item->Areautilsemdeciamal);
                                     } else {
-                                        $util = NULL;
+                                        $util = null;
                                     }
                                     if (utf8_decode($item->Banheiroauxiliar) != "") {
                                         $banheiro_a = utf8_decode($item->Banheiroauxiliar);
                                     } else {
-                                        $banheiro_a = NULL;
+                                        $banheiro_a = null;
                                     }
                                     if (utf8_decode($item->Banheiroempregada) != "") {
                                         $banheiro_e = utf8_decode($item->Banheiroempregada);
                                     } else {
-                                        $banheiro_e = NULL;
+                                        $banheiro_e = null;
                                     }
                                     if (utf8_decode($item->Banheiro) != "") {
                                         $banheiro1 = utf8_decode($item->Banheiro);
                                     } else {
-                                        $banheiro1 = NULL;
+                                        $banheiro1 = null;
                                     }
                                     if (utf8_decode($item->Banheiro2) != "") {
                                         $banheiro2 = utf8_decode($item->Banheiro2);
                                     } else {
-                                        $banheiro2 = NULL;
+                                        $banheiro2 = null;
                                     }
                                     if (utf8_decode($item->Dormitorios) != "") {
                                         $dormitorio = utf8_decode($item->Dormitorios);
                                     } else {
-                                        $dormitorio = NULL;
+                                        $dormitorio = null;
                                     }
                                     if (utf8_decode($item->Valorvenda) != "") {
                                         $valor_venda = utf8_decode($item->Valorvenda);
                                     } else {
-                                        $valor_venda = NULL;
+                                        $valor_venda = null;
                                     }
                                     if (utf8_decode($item->Valorlocacao) != "") {
                                         $valor_locacao = utf8_decode($item->Valorlocacao);
                                     } else {
-                                        $valor_locacao = NULL;
+                                        $valor_locacao = null;
                                     }
                                     if (utf8_decode($item->Valortemporada) != "") {
                                         $valor_temporada = utf8_decode($item->Valortemporada);
                                     } else {
-                                        $valor_temporada = NULL;
+                                        $valor_temporada = null;
                                     }
                                     if (utf8_decode($item->Valorcondominio) != "") {
                                         $valor_condominio = utf8_decode($item->Valorcondominio);
                                     } else {
-                                        $valor_condominio = NULL;
+                                        $valor_condominio = null;
                                     }
                                     if (utf8_decode($item->Valoriptu) != "") {
                                         $valor_iptu = utf8_decode($item->Valoriptu);
                                     } else {
-                                        $valor_iptu = NULL;
+                                        $valor_iptu = null;
                                     }
 
                                     //////// Filtro
