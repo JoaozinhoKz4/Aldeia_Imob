@@ -1,4 +1,5 @@
 <?php 
+setlocale(LC_MONETARY, 'pt_BR'); 
 function money_formats($format, $number)
 {
     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?'.
@@ -111,7 +112,7 @@ function money_formats($format, $number)
         $banheiro1 = $_POST['banheiro1'];
         $banheiro2 = $_POST['banheiro2'];
         $dormitorio = $_POST['dormitorio'];
-        $valor = money_formats("%.2n",$_POST['valor']);
+        $valor = money_format("%.2n",$_POST['valor']);
         $venda = $_POST['venda'];
         $temporada = $_POST['temporada'];
         $locacao = $_POST['locacao'];

@@ -229,6 +229,7 @@
                             <div class="objects-grid gutters-sm row">
 
                                 <?php
+                                setlocale(LC_MONETARY, 'pt_BR'); 
                                 function money_formats($format, $number)
                                 {
                                     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?' .
@@ -548,7 +549,7 @@
                                     if ($quartos != "")
                                         echo        '<li><span class="text-muted">Quartos:</span>' . " " . $quartos . '</li>';
                                     echo    '        </ul>
-                                        <span class="object-price">' . money_formats("%.2n", $valor) . '</span>
+                                        <span class="object-price">' . money_format("%.2n", $valor) . '</span>
                                         <button type="submit"  class="btn btn-primary"><span class="hidden-xs-down">Detalhes</span></button>
                                     </div>
                                     </form> 
