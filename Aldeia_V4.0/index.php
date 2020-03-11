@@ -45,12 +45,14 @@
             <ul class="nav nav-main-horizontal pr-4">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#flats">Comprar</a></li>
-                <li><a href="#flats">Alugar</a></li>
+                <li><a href="#flats">Alugar um imóvel</a></li>
+                <li><a href="#">Alugar meu imóvel</a></li>
+                <li><a href="#">Vender</a></li> 
+                <li><a href="#">Avaliar</a></li> 
+                
                 <li><a href="#gallery">Galeria</a></li>
                 <li><a href="#who-we-are">Quem somos</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#flats">Comprar</a></li>
-                <li><a href="#flats">Vender</a></li> 
+                <li><a href="#contact">Contato</a></li> 
                 <li><a href="area-do-usuario/login/">Área do usuário</a></li>
             </ul>
             <div class="selector"></div>
@@ -230,7 +232,7 @@
 
                                 <?php
                                 setlocale(LC_MONETARY, 'pt_BR'); 
-                                function money_formats($format, $number)
+                                function money_format($format, $number)
                                 {
                                     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?' .
                                         '(?:#([0-9]+))?(?:\.([0-9]+))?([in%])/';

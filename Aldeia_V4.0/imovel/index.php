@@ -1,7 +1,7 @@
 <?php 
 session_start();
 setlocale(LC_MONETARY, 'pt_BR'); 
-function money_formats($format, $number)
+function money_format($format, $number)
 {
     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?'.
               '(?:#([0-9]+))?(?:\.([0-9]+))?([in%])/';
