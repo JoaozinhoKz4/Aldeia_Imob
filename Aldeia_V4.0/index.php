@@ -48,8 +48,8 @@
                 <li><a href="#flats">Alugar um imóvel</a></li>
                 <li><a href="#">Alugar meu imóvel</a></li>
                 <li><a href="#">Vender</a></li> 
-                <li><a href="#">Avaliar</a></li> 
-                
+                <li><a href="#">Avaliação de Imóveis</a></li> 
+
                 <li><a href="#gallery">Galeria</a></li>
                 <li><a href="#who-we-are">Quem somos</a></li>
                 <li><a href="#contact">Contato</a></li> 
