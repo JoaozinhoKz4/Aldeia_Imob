@@ -1,7 +1,7 @@
 <?php 
 session_start();
 setlocale(LC_MONETARY, 'pt_BR'); 
-function money_formats($format, $number)
+function money_formatss($format, $number)
 {
     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?'.
               '(?:#([0-9]+))?(?:\.([0-9]+))?([in%])/';
@@ -113,7 +113,7 @@ function money_formats($format, $number)
         $banheiro1 = $_POST['banheiro1'];
         $banheiro2 = $_POST['banheiro2'];
         $dormitorio = $_POST['dormitorio'];
-        $valor = money_format("%.2n",$_POST['valor']);
+        $valor = money_formats("%.2n",$_POST['valor']);
         $venda = $_POST['venda'];
         $temporada = $_POST['temporada'];
         $locacao = $_POST['locacao'];
@@ -264,19 +264,19 @@ function money_formats($format, $number)
                                     <?php 
                                     if($venda != "") {
                             echo '<dt class="col-sm-6">Valor de venda:</dt>
-                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['venda']). '</dd>'; }
+                                    <dd class="col-sm-6">'.money_formats("%.2n",$_POST['venda']). '</dd>'; }
                                     if($locacao != "") {
                             echo '<dt class="col-sm-6">Valor do aluguel:</dt>
-                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['locacao']). '</dd>'; }
+                                    <dd class="col-sm-6">'.money_formats("%.2n",$_POST['locacao']). '</dd>'; }
                                     if($temporada != "") {
                             echo '<dt class="col-sm-6">Valor da temporada:</dt>
-                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['temporada']). '</dd>'; }
+                                    <dd class="col-sm-6">'.money_formats("%.2n",$_POST['temporada']). '</dd>'; }
                                     if($condominio != "") {
                             echo '<dt class="col-sm-6">Valor do condomínio:</dt>
-                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['condominio']). '</dd>'; }
+                                    <dd class="col-sm-6">'.money_formats("%.2n",$_POST['condominio']). '</dd>'; }
                                     if($iptu != "") {
                             echo '<dt class="col-sm-6">Valor do IPTU:</dt>
-                                    <dd class="col-sm-6">'.money_format("%.2n",$_POST['iptu']). '</dd>'; }
+                                    <dd class="col-sm-6">'.money_formats("%.2n",$_POST['iptu']). '</dd>'; }
                                     if($dormitorio != "") {
                             echo    '<dt class="col-sm-6">Quartos:</dt>
                                     <dd class="col-sm-6">'.$dormitorio.'</dd>'; }
