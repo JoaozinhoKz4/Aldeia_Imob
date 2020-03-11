@@ -44,6 +44,20 @@ CREATE TABLE IF NOT EXISTS `u483503649_imob`.`docs` (
   PRIMARY KEY (`id_doc`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `u483503649_imob`.`imoveis`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `u483503649_imob`.`imoveis` (
+  `id_imovel` INT NOT NULL AUTO_INCREMENT,
+  `id_user` INT NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `detalhes` MEDIUMTEXT NOT NULL,
+  `telefone` VARCHAR(45) NOT NULL,
+  `imagem` VARCHAR(90) NOT NULL,
+  PRIMARY KEY (`id_imovel`))
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

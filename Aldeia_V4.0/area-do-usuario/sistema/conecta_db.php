@@ -1,7 +1,7 @@
 <?php
-    $servidor = "185.201.10.94";
-    $usuario = "u483503649_admin";
-    $senha = "q9N@8nM8";
+    $servidor = "localhost";
+    $usuario = "root";
+    $senha = "";
     $dbname = "u483503649_imob";    
 
     $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);

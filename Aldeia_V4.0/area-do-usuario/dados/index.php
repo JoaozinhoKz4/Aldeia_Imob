@@ -35,6 +35,7 @@
               <ul class="navbar-nav">
                 <li class="nav-item"><a href="../documentos/#visualiza" class="nav-link active"><i class="fai fa fa-file-text-o fa-2x" aria-hidden="true"></i>Visualizar Documentos</a></li>
                 <li class="nav-item"><a href="#edita-user" class="nav-link active"><i class="fai fa fa-address-book-o fa-2x" aria-hidden="true"></i>Editar dados</a></li>
+                <li class="nav-item"><a href="../anunciar-imovel" class="nav-link active"><i class="fai fa fa-building fa-2x" aria-hidden="true"></i>Anunciar Imóvel</a></li>
                 <li class="nav-item"><a href="../sistema/login/encerra_sessao.php" class="nav-link active"><i class="fai fa fa-sign-out fa-2x" aria-hidden="true"></i>Sair</a></li>              
               </ul>
             </div>
