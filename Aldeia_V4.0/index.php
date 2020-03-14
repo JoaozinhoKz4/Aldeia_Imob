@@ -61,9 +61,9 @@
                     <li><a href="#home">Início</a></li>
                     <li><a href="#flats">Comprar</a></li>
                     <li><a href="#flats">Alugar um imóvel</a></li>
-                    <li><a href="#">Alugar meu imóvel</a></li>
-                    <li><a href="#">Vender</a></li>
-                    <li><a href="#">Avaliação de Imóveis</a></li>
+                    <li><a href="anunciar-imovel/?alugar=1">Alugar meu imóvel</a></li>
+                    <li><a href="anunciar-imovel/?vender=1">Vender</a></li>
+                    <li><a href="anunciar-imovel/?avaliar=1">Avaliação de Imóveis</a></li>
 
                     <li><a href="#gallery">Galeria</a></li>
                     <li><a href="#who-we-are">Quem somos</a></li>
