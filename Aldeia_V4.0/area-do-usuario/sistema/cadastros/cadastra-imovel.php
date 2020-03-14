@@ -1,7 +1,6 @@
 <?php
 require_once('../conecta_db.php');
 
-$id_user = $_POST['id'];
 $usuario = $_POST['usuario'];
 $telefone = $_POST['telefone'];
 $email = $_POST['email'];
@@ -18,7 +17,7 @@ if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
     $novoNome = $nome.'-'.uniqid ( time () ) . '.' . $extensao;
     $destino = "area-do-usuario/banco-imoveis/".$novoNome; // Substituir embaixo por public_html
     move_uploaded_file( $arquivo_tmp, $_SERVER['DOCUMENT_ROOT']."/Aldeia_Imob"."/Aldeia_V4.0"."/".$destino);}
-$sql = "INSERT INTO `imoveis`(`id_imovel`, `id_user`, `usuario`, `email`, `detalhes`, `telefone`, `imagem`) VALUES (NULL,$id_user,'$usuario','$email','$detalhes','$telefone','$destino')";        
+$sql = "INSERT INTO `imoveis`(`id_imovel`, `usuario`, `email`, `detalhes`, `telefone`, `imagem`) VALUES (NULL,'$usuario','$email','$detalhes','$telefone','$destino')";        
 //echo $sql;
 $query = mysqli_query($conn, $sql);
-header("Location: ../../anunciar-imovel/?certo=1"); 
+header("Location: ../../../anunciar-imovel/?certo=1"); 
