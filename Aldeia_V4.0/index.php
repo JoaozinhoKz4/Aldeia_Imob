@@ -164,7 +164,17 @@
                                     <div class="">
                                         <select class="custom-select ml-2 mr-2 form-control" name="localizacao">
                                             <option value="">Selecione o Bairro desejado</option>
+                                            <option value="LAGO NORTE">Lago Norte</option>
                                             <option value="LAGO SUL">Lago Sul</option>
+                                            <option value="ASA NORTE">Asa Norte</option>
+                                            <option value="ASA SUL">Asa Sul</option>
+                                            <option value="AGUAS CLARAS">Águas Claras</option>
+                                            <option value="SUDOESTE">Sudoeste</option>
+                                            <option value="SAMAMBAIA SUL">Samambaia sul</option>
+                                            <option value="TAGUATINGA">Taguatinga</option>
+                                            <option value="PARK WAY">Park Way</option>
+                                            <option value="SOBRADINHO">Sobradinho</option>
+                                            <option value="GUARÁ II">Guará II</option>
                                         </select>
                                     </div>
                                 </div>
