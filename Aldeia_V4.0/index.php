@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/plugins/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="assets/plugins/photoswipe/dist/default-skin/default-skin.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="/tela-inicial.css"/>
     <!-- CSS Icons -->
     <link rel="stylesheet" href="assets/css/themify-icons.css" />
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
@@ -30,6 +31,21 @@
     <link id="theme" rel="stylesheet" href="assets/css/themes/theme-blue.css" />
 
 </head>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5d41eb067d27204601c8a346/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 
 <body class="header-horizontal dark-overlay">
 
@@ -38,25 +54,28 @@
 
         <!-- Header -->
         <header id="header" class="header-horizontal dark">
-
+            <button class="navbar-toggler" id="botao-maldito" type="button" data-toggle="collapse" data-target="#navigation-main" style="background-color: white; display:none;">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+        <img src="assets/img/logo-final3.png" alt="" id="logocelular" style="display: none;">
             <!-- Module - Navigation -->
-        <nav id="navigation-main" class="module module-nav row">
-            <img src="assets/img/logo-final3.png" alt="">
-            <ul class="nav nav-main-horizontal pr-4">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#flats">Comprar</a></li>
-                <li><a href="#flats">Alugar um imóvel</a></li>
-                <li><a href="#">Alugar meu imóvel</a></li>
-                <li><a href="#">Vender</a></li> 
-                <li><a href="#">Avaliar</a></li> 
-                
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#who-we-are">Quem somos</a></li>
-                <li><a href="#contact">Contato</a></li> 
-                <li><a href="area-do-usuario/login/">Área do usuário</a></li>
-            </ul>
-            <div class="selector"></div>
-        </nav>
+            <nav id="navigation-main" class="module module-nav row navbar-expand-lg">
+            <img src="assets/img/logo-final3.png" alt="" id="logopc">
+                <ul class="nav nav-main-horizontal pr-4">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#flats">Comprar</a></li>
+                    <li><a href="#flats">Alugar um imóvel</a></li>
+                    <li><a href="anunciar-imovel/?alugar=1">Alugar meu imóvel</a></li>
+                    <li><a href="anunciar-imovel/?vender=1">Vender</a></li>
+                    <li><a href="anunciar-imovel/?avaliar=1">Avaliação de Imóveis</a></li>
+
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#who-we-are">Quem somos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="area-do-usuario/login/">Área do usuário</a></li>
+                </ul>
+                <div class="selector"></div>
+            </nav>
         </header>
         <!-- Header / End -->
 
@@ -74,7 +93,7 @@
                             <img src="assets/img/photos/slider01.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero comprar</a>
+                            <a class="btn btn-link btn-init" href="#flats">Quero comprar</a>
                         </div>
                     </div>
                     <!-- Slide -->
@@ -83,7 +102,7 @@
                             <img src="assets/img/photos/slider02.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero vender</a>
+                            <a class="btn btn-link btn-init" href="anunciar-imovel/?vender=1">Quero vender</a>
                         </div>
                     </div>
                     <!-- Slide -->
@@ -92,7 +111,7 @@
                             <img src="assets/img/photos/slider03.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero alugar um imóvel</a>
+                            <a class="btn btn-link btn-init" href="#flats">Quero alugar um imóvel</a>
                         </div>
                     </div>
                     <!-- Slide -->
@@ -101,7 +120,7 @@
                             <img src="assets/img/photos/slider04.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero locar meu imóvel</a>
+                            <a class="btn btn-link btn-init" href="anunciar-imovel/?alugar=1">Quero locar meu imóvel</a>
                         </div>
                     </div>
                 </div>
@@ -149,7 +168,17 @@
                                     <div class="">
                                         <select class="custom-select ml-2 mr-2 form-control" name="localizacao">
                                             <option value="">Selecione o Bairro desejado</option>
+                                            <option value="LAGO NORTE">Lago Norte</option>
                                             <option value="LAGO SUL">Lago Sul</option>
+                                            <option value="ASA NORTE">Asa Norte</option>
+                                            <option value="ASA SUL">Asa Sul</option>
+                                            <option value="AGUAS CLARAS">Águas Claras</option>
+                                            <option value="SUDOESTE">Sudoeste</option>
+                                            <option value="SAMAMBAIA SUL">Samambaia sul</option>
+                                            <option value="TAGUATINGA">Taguatinga</option>
+                                            <option value="PARK WAY">Park Way</option>
+                                            <option value="SOBRADINHO">Sobradinho</option>
+                                            <option value="GUARÁ II">Guará II</option>
                                         </select>
                                     </div>
                                 </div>
@@ -231,12 +260,12 @@
                             <div class="objects-grid gutters-sm row">
 
                                 <?php
-                                setlocale(LC_MONETARY, 'pt_BR'); 
-                                function money_format($format, $number)
+                                setlocale(LC_MONETARY, 'pt_BR');
+                                function money_formats($format, $number)
                                 {
                                     $regex  = '/%((?:[\^!\-]|\+|\(|\=.)*)([0-9]+)?' .
                                         '(?:#([0-9]+))?(?:\.([0-9]+))?([in%])/';
-                                    if(setlocale(LC_MONETARY, 0) == 'C') {
+                                    if (setlocale(LC_MONETARY, 0) == 'C') {
                                         setlocale(LC_MONETARY, '');
                                     }
                                     $locale = localeconv();
@@ -551,7 +580,7 @@
                                     if ($quartos != "")
                                         echo        '<li><span class="text-muted">Quartos:</span>' . " " . $quartos . '</li>';
                                     echo    '        </ul>
-                                        <span class="object-price">' . money_format("%.2n", $valor) . '</span>
+                                        <span class="object-price">' . money_formats("%.2n", $valor) . '</span>
                                         <button type="submit"  class="btn btn-primary"><span class="hidden-xs-down">Detalhes</span></button>
                                     </div>
                                     </form> 
@@ -911,7 +940,6 @@
     <script src="assets/plugins/photoswipe/dist/photoswipe.min.js"></script>
     <script src="assets/plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
     <script src="assets/plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
-
     <!-- JS Core -->
     <script src="assets/js/core.js"></script>
 

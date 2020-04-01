@@ -1535,7 +1535,7 @@ pre code {
   background-color: rgba(255, 255, 255, 0.075);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1309px) {
   .table-responsive {
     display: block;
     width: 100%;
@@ -3317,11 +3317,11 @@ tbody.collapse.show {
   font-size: 1.25rem;
   line-height: 1;
   background: transparent;
-  border: 1px solid transparent;
+  border: 1px solid white;
   border-radius: 0.25rem;
 }
 
-.navbar-toggler:focus, .navbar-toggler:hover {
+.navbar-toggler:focus, .navbar-togglerr:hover {
   text-decoration: none;
 }
 
@@ -3427,7 +3427,7 @@ tbody.collapse.show {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1309px) {
   .navbar-expand-lg > .container,
   .navbar-expand-lg > .container-fluid {
     padding-right: 0;

@@ -32,6 +32,7 @@
               <li class="nav-item"><a href="#cadastrar-doc" class="nav-link active"><i class="fai fa fa-file-archive-o fa-2x" aria-hidden="true"></i>Cadastrar/Administrar Documentos</a></li>
                 <li class="nav-item"><a href="../visualizar-documentos/" class="nav-link active"><i class="fai fa fa-file-text-o fa-2x" aria-hidden="true"></i>Visualizar Documentos</a></li>
                 <li class="nav-item"><a href="../cadastrar-usuario/#cadastrar-adm" class="nav-link active"><i class="fai fa fa-address-book-o fa-2x" aria-hidden="true"></i>Cadastrar/Excluir Usuários</a></li>
+                <li class="nav-item"><a href="../analisar-imovel" class="nav-link active"><i class="fai fa fa-plus fa-2x" aria-hidden="true"></i>Imóveis a analisar</a></li>
                 <li class="nav-item"><a href="../../sistema/login/encerra_sessao.php" class="nav-link active"><i class="fai fa fa-sign-out fa-2x" aria-hidden="true"></i>Sair</a></li>              
               </ul>
             </div>
