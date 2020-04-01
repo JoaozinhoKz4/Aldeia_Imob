@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/plugins/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="assets/plugins/photoswipe/dist/default-skin/default-skin.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="tela-inicial.css"/>
+    <link rel="stylesheet" href="/tela-inicial.css"/>
     <!-- CSS Icons -->
     <link rel="stylesheet" href="assets/css/themify-icons.css" />
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
@@ -54,7 +54,7 @@
 
         <!-- Header -->
         <header id="header" class="header-horizontal dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-main" style="background-color: white;">
+            <button class="navbar-toggler" id="botao-maldito" type="button" data-toggle="collapse" data-target="#navigation-main" style="background-color: white; display:none;">
                     <span class="navbar-toggler-icon"></span>
             </button>
         <img src="assets/img/logo-final3.png" alt="" id="logocelular" style="display: none;">
@@ -940,7 +940,6 @@
     <script src="assets/plugins/photoswipe/dist/photoswipe.min.js"></script>
     <script src="assets/plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
     <script src="assets/plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- JS Core -->
     <script src="assets/js/core.js"></script>
 
