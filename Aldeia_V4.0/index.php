@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/plugins/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="assets/plugins/photoswipe/dist/default-skin/default-skin.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="tela-inicial.css"/>
     <!-- CSS Icons -->
     <link rel="stylesheet" href="assets/css/themify-icons.css" />
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
@@ -53,10 +54,13 @@
 
         <!-- Header -->
         <header id="header" class="header-horizontal dark">
-
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-main" style="background-color: white;">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+        <img src="assets/img/logo-final3.png" alt="" id="logocelular" style="display: none;">
             <!-- Module - Navigation -->
-            <nav id="navigation-main" class="module module-nav row">
-                <img src="assets/img/logo-final3.png" alt="">
+            <nav id="navigation-main" class="module module-nav row navbar-expand-lg">
+            <img src="assets/img/logo-final3.png" alt="" id="logopc">
                 <ul class="nav nav-main-horizontal pr-4">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#flats">Comprar</a></li>
@@ -89,7 +93,7 @@
                             <img src="assets/img/photos/slider01.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero comprar</a>
+                            <a class="btn btn-link btn-init" href="#flats">Quero comprar</a>
                         </div>
                     </div>
                     <!-- Slide -->
@@ -98,7 +102,7 @@
                             <img src="assets/img/photos/slider02.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero vender</a>
+                            <a class="btn btn-link btn-init" href="anunciar-imovel/?vender=1">Quero vender</a>
                         </div>
                     </div>
                     <!-- Slide -->
@@ -107,7 +111,7 @@
                             <img src="assets/img/photos/slider03.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero alugar um imóvel</a>
+                            <a class="btn btn-link btn-init" href="#flats">Quero alugar um imóvel</a>
                         </div>
                     </div>
                     <!-- Slide -->
@@ -116,7 +120,7 @@
                             <img src="assets/img/photos/slider04.jpg" alt="">
                         </div>
                         <div class="slide-content container text-center">
-                            <a class="btn btn-link btn-init" href="">Quero locar meu imóvel</a>
+                            <a class="btn btn-link btn-init" href="anunciar-imovel/?alugar=1">Quero locar meu imóvel</a>
                         </div>
                     </div>
                 </div>
@@ -936,7 +940,7 @@
     <script src="assets/plugins/photoswipe/dist/photoswipe.min.js"></script>
     <script src="assets/plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
     <script src="assets/plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- JS Core -->
     <script src="assets/js/core.js"></script>
 

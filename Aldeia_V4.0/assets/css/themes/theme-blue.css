@@ -666,7 +666,7 @@ img {
   transition: all 0.25s ease-out;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   #header.header-horizontal .module-nav {
     position: absolute;
     top: 100%;
@@ -778,7 +778,7 @@ img {
   display: none;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   #header.header-horizontal .module-nav-toggle {
     display: block;
   }
@@ -952,7 +952,7 @@ img {
   display: none;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   #header.header-vertical #nav-toggle {
     display: block;
   }
@@ -1081,6 +1081,12 @@ img {
 
 .header-horizontal #content {
   padding-top: 60px;
+}
+
+@media only screen and (max-width: 1309px) {
+  #header.header-horizontal #nav-toggle {
+    display: block;
+  }
 }
 
 .header-horizontal #content .section:first-child {
@@ -1235,7 +1241,7 @@ img {
   margin-bottom: 3rem;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   .post.single .post-content {
     padding: 3rem;
   }
@@ -2071,7 +2077,7 @@ pre {
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   .page-title h1 {
     font-size: 3.5rem;
   }
@@ -2608,7 +2614,7 @@ section.protrude, .section.protrude {
   padding-bottom: 4rem;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   .section-object > .object-single {
     padding-top: 40vw;
   }
@@ -3338,7 +3344,7 @@ section.protrude, .section.protrude {
 }
 
 .btn-link:hover, .btn-link:focus, .btn-link:active, .btn-link:focus:active {
-  color: #3D64CC;
+  color: #f15e23;
   text-decoration: none;
 }
 
@@ -4167,7 +4173,7 @@ section.protrude, .section.protrude {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   .carousel-gallery {
     width: 80%;
   }
@@ -5586,7 +5592,7 @@ hr.hr-primary {
 }
 
 /* Go back */
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1309px) {
   .stick-to-content {
     position: relative !important;
     top: 0 !important;

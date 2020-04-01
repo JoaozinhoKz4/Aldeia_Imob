@@ -17,9 +17,11 @@
     <title>Aldeia Imobiliária</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
+    <header id="header" class="header-horizontal dark">
+        <nav id="navigation-main" class="module module-nav">
+            <div class="module module-back">
+                    <a onclick="window.history.back()" class="nav-back"><i class="fa fa-angle-left"></i></a>
+            </div>
             <a class="navbar-brand">
             <?php
 
@@ -54,7 +56,20 @@
                     <div class="col-sm">
 
                         <form method="POST" action="../area-do-usuario/sistema/cadastros/cadastra-imovel.php" enctype="multipart/form-data">
-                            <h1 class="text-center" style="color: white">Anunciar Imóvel</h1>    
+                            <h1 class="text-center" style="color: white"> <?php
+
+if (isset($_GET['alugar'])) {
+    $texto = "Alugar meu Imóvel";
+}
+if (isset($_GET['vender'])) {
+    $texto = "Vender meu Imóvel";
+}
+if (isset($_GET['avaliar'])) {
+    $texto = "Avaliar Imóvel";
+}
+
+
+echo $texto.'</>'; ?>    
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>

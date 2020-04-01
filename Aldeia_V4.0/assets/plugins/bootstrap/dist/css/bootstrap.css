@@ -4126,7 +4126,7 @@ tbody.collapse.show {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1309px) {
   .navbar-toggleable-md .navbar-nav .dropdown-menu {
     position: static;
     float: none;
@@ -9254,7 +9254,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1309px) {
   .hidden-md-down {
     display: none !important;
   }

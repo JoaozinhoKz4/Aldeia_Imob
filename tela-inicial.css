@@ -1,0 +1,11 @@
+@media (max-width: 1310px){
+    #logocelular{
+        display: block;
+    }
+    #logopc{
+        display: none;
+    }
+    .navbar-toggler{
+        display: block;
+    }
+}
